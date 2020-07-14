@@ -30,8 +30,10 @@ Component.register('shyim-api-test-button', {
         },
 
         check() {
+            this.isLoading = true;
             this.shyimApiTest.check(this.pluginConfig).then((res) => {
                 if (res.success) {
+                    this.isSaveSuccessful = true;
                     this.createNotificationSuccess({
                         title: this.$tc('shyim-api-test-button.title'),
                         message: this.$tc('shyim-api-test-button.success')
@@ -42,6 +44,8 @@ Component.register('shyim-api-test-button', {
                         message: this.$tc('shyim-api-test-button.error')
                     });
                 }
+
+                this.isLoading = false;
             });
         }
     }
