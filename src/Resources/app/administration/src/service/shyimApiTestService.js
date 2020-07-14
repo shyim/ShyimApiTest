@@ -1,6 +1,3 @@
-import swagSecurityApiClient
-    from "../../../../../../../SwagPlatformSecurity/src/Resources/app/administration/src/service/swagSecurityApiClient";
-
 const ApiService = Shopware.Classes.ApiService;
 const { Application } = Shopware;
 
