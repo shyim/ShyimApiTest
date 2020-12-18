@@ -14,7 +14,7 @@
         </input-field>
         <component name="shyim-api-test-button">
             <name>apiTest</name>
-            <label>API Verbindung testen</label>
+            <btnLabel>API Verbindung testen</btnLabel>
         </component>
     </card>
 </config>
