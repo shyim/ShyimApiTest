@@ -4,7 +4,7 @@ import template from './shyim-api-test-button.html.twig';
 Component.register('shyim-api-test-button', {
     template,
 
-    props: ['label'],
+    props: ['btnLabel'],
     inject: ['shyimApiTest'],
 
     mixins: [
