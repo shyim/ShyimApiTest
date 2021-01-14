@@ -20,7 +20,13 @@ Component.register('shyim-api-test-button', {
 
     computed: {
         pluginConfig() {
-            return this.$parent.$parent.$parent.actualConfigData.null;
+            let $parent = this.$parent;
+
+            while ($parent.actualConfigData === undefined) {
+                $parent = $parent.$parent;
+            }
+
+            return $parent.actualConfigData.null;
         }
     },
 
