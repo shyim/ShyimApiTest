@@ -26,7 +26,18 @@ Component.register('shyim-api-test-button', {
                 $parent = $parent.$parent;
             }
 
-            return $parent.actualConfigData.null;
+            let currentSalesChannelId = $parent.currentSalesChannelId;
+
+            if(currentSalesChannelId === null  || !currentSalesChannelId in $parent.actualConfigData){
+                return $parent.actualConfigData.null;
+            }
+
+            let overridenConfig = {
+                ...$parent.actualConfigData.null,
+                ...$parent.actualConfigData[currentSalesChannelId]
+            };
+
+            return overridenConfig;
         }
     },
 
